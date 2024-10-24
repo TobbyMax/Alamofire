@@ -68,7 +68,7 @@ jobs:
             name: "macOS 11, Xcode 13.0, Swift 5.5.0"
             testPlan: "macOS-NoTS"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: "brew install alamofire/alamofire/firewalk && firewalk &"
       - name: ${{ matrix.name }}
@@ -80,7 +80,7 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_14.3.app/Contents/Developer
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk && firewalk &
       - name: Catalyst
@@ -105,7 +105,7 @@ jobs:
             name: "watchOS"
             scheme: "Alamofire watchOS"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk && firewalk &
       - name: ${{ matrix.name }}
@@ -130,7 +130,7 @@ jobs:
           #   name: "iOS 13.7"
           #   testPlan: "iOS-NoTS"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk || brew upgrade alamofire/alamofire/firewalk && firewalk &
       - name: ${{ matrix.name }}
@@ -154,7 +154,7 @@ jobs:
             testPlan: "visionOS"
             scheme: "Alamofire visionOS"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk || brew upgrade alamofire/alamofire/firewalk && firewalk &
       - name: ${{ matrix.name }}
@@ -179,7 +179,7 @@ jobs:
           #   name: "tvOS 13.4"
           #   testPlan: "tvOS-NoTS"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk || brew upgrade alamofire/alamofire/firewalk && firewalk &
       - name: ${{ matrix.name }}
@@ -201,7 +201,7 @@ jobs:
             name: "watchOS 7.4"
             testPlan: "watchOS-NoTS"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk && firewalk &
       - name: ${{ matrix.name}}
@@ -244,7 +244,7 @@ jobs:
             runsOn: macOS-11
             name: "macOS 11, SPM 5.5.0 Test"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: Install Firewalk
         run: brew install alamofire/alamofire/firewalk && firewalk &
       - name: Test SPM
@@ -269,7 +269,7 @@ jobs:
       image: ${{ matrix.image }}
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@vv4.2.2
       - name: ${{ matrix.image }}
         run: swift build --build-tests -c debug
   Android:
@@ -291,7 +291,7 @@ jobs:
           branch: swift-5.8-release
           tag: 5.8-RELEASE
       - name: Clone
-        uses: actions/checkout@v3
+        uses: actions/checkout@vv4.2.2
       - name: SPM Windows Build
         run: |
           swift build --build-tests -c debug -Xlinker /INCREMENTAL:NO -v
@@ -303,7 +303,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Clone
-        uses: actions/checkout@v3
+        uses: actions/checkout@vv4.2.2
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
